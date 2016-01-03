@@ -5,7 +5,7 @@ import com.nickfunnell.arch.espoc.domain.event.*;
 import com.nickfunnell.arch.espoc.read.event.handler.VirtualInstanceCreatedReadHandler;
 import com.nickfunnell.arch.espoc.read.event.handler.VirtualInstanceDestroyedReadHandler;
 import com.nickfunnell.arch.espoc.read.event.handler.VirtualInstanceSpunDownReadHandler;
-import com.nickfunnell.arch.espoc.read.event.handler.VirtualInstanceSpunUpReadHandler;
+import com.nickfunnell.arch.espoc.read.event.handler.VirtualInstanceSpunUpReadReadHandler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class VirtualInstanceReadModel {
 
     public VirtualInstanceReadModel(EventStore eventStore) {
         eventStore.subscribeToEventBus(new VirtualInstanceCreatedReadHandler(inMemoryReadStorage));
-        eventStore.subscribeToEventBus(new VirtualInstanceSpunUpReadHandler(inMemoryReadStorage));
+        eventStore.subscribeToEventBus(new VirtualInstanceSpunUpReadReadHandler(inMemoryReadStorage));
         eventStore.subscribeToEventBus(new VirtualInstanceSpunDownReadHandler(inMemoryReadStorage));
         eventStore.subscribeToEventBus(new VirtualInstanceDestroyedReadHandler(inMemoryReadStorage));
     }

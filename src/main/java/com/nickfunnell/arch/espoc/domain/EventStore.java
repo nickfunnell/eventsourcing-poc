@@ -1,7 +1,7 @@
 package com.nickfunnell.arch.espoc.domain;
 
 import com.nickfunnell.arch.espoc.domain.event.Event;
-import com.nickfunnell.arch.espoc.read.event.handler.Handler;
+import com.nickfunnell.arch.espoc.read.event.handler.ReadHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,6 +9,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
+ *
+ * A simple event storage solution, used to save all events on a per-aggregate basis. The class also contains a 'dummy'
+ * message bus, which records all events that occur.
  * Created by nick on 29/12/2015.
  */
 public class EventStore {
@@ -24,7 +27,7 @@ public class EventStore {
     //'point to point' - essentially, we want the subscriber to pick a place in the event stream, rather than simply
     //removing the head event
     private List eventBus = new ArrayList();
-    private Set<Handler> subscribedHandlers = new HashSet<Handler>();
+    private Set<ReadHandler> subscribedHandlers = new HashSet<ReadHandler>();
 
 
     public void saveEvents(UUID aggregateId, List<Event> events, int expectedVersion) {
@@ -59,7 +62,7 @@ public class EventStore {
 
     }
 
-    public void subscribeToEventBus(Handler handler) {
+    public void subscribeToEventBus(ReadHandler handler) {
         subscribedHandlers.add(handler);
 
     }

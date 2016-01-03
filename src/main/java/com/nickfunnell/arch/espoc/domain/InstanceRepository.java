@@ -9,6 +9,7 @@ import java.util.UUID;
  * DDD-style 'repository' - intent is to provide a generic access Class that provides a 'Collection' view/abstraction
  * of any underlying storage persistence-retrieval mechanism.
  * TODO Genericise interface to be able to persist events for any given aggregate
+ *
  * Created by nick on 29/12/2015.
  */
 public class InstanceRepository {

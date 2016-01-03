@@ -11,7 +11,7 @@ import java.util.UUID;
 /**
  * Created by nick on 03/01/2016.
  */
-public class VirtualInstanceCreatedReadHandler implements Handler {
+public class VirtualInstanceCreatedReadHandler implements ReadHandler {
 
     private Map<UUID,VirtualInstanceDTO> virtualInstanceDTOMap;
 

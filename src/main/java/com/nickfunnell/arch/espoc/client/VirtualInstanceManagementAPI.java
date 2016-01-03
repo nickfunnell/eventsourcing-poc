@@ -8,6 +8,7 @@ import com.nickfunnell.arch.espoc.domain.InstanceType;
 import com.nickfunnell.arch.espoc.domain.command.DestroyVirtualInstanceCommand;
 import com.nickfunnell.arch.espoc.domain.command.SpinDownVirtualInstanceCommand;
 import com.nickfunnell.arch.espoc.domain.command.SpinUpVirtualInstanceCommand;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.UUID;
 
@@ -55,20 +56,22 @@ public class VirtualInstanceManagementAPI {
     }
 
     public VirtualInstance getVirtualInstance(UUID id){
-return null;
+
+        throw new NotImplementedException();
     }
 
     public VirtualInstance getInstancesPerOwner(String ownerEmail){
-        return null;
+
+        throw new NotImplementedException();
     }
 
     public int getInstanceUptime(UUID id){
         //Use left fold? to grab uptimes and sum them
-        return 0;
+        throw new NotImplementedException();
     }
 
     public int getInstanceCreationTime(UUID id){
-        return 0;
+        throw new NotImplementedException();
     }
 
 

@@ -2,7 +2,6 @@ package com.nickfunnell.arch.espoc.read.event.handler;
 
 import com.nickfunnell.arch.espoc.domain.InstanceStatus;
 import com.nickfunnell.arch.espoc.domain.event.Event;
-import com.nickfunnell.arch.espoc.domain.event.VirtualInstanceCreatedEvent;
 import com.nickfunnell.arch.espoc.domain.event.VirtualInstanceSpunUpEvent;
 import com.nickfunnell.arch.espoc.read.VirtualInstanceDTO;
 
@@ -12,11 +11,11 @@ import java.util.UUID;
 /**
  * Created by nick on 03/01/2016.
  */
-public class VirtualInstanceSpunUpReadHandler implements Handler {
+public class VirtualInstanceSpunUpReadReadHandler implements ReadHandler {
 
     private Map<UUID,VirtualInstanceDTO> virtualInstanceDTOMap;
 
-    public VirtualInstanceSpunUpReadHandler(Map<UUID, VirtualInstanceDTO> virtualInstanceDTOMap) {
+    public VirtualInstanceSpunUpReadReadHandler(Map<UUID, VirtualInstanceDTO> virtualInstanceDTOMap) {
         this.virtualInstanceDTOMap = virtualInstanceDTOMap;
     }
 
