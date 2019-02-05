@@ -12,7 +12,7 @@ This means that we can avoid an [Anemic Domain Model](http://www.martinfowler.co
 focus on building a behaviourally-rich model.
 * By convention, all Events are named in the past tense (because an event has happened, and can't 'un-happen' - a 
 'reversal' event would be employed to achieve the same result.)
-* Command-side (Read) and Query-side (Write) are completely isolated from one another. Any methods modifying state 
+* Command-side (Write) and Query-side (Read) are completely isolated from one another. Any methods modifying state 
 should not return any values, and any methods returning values should not modify state (no 'side-effects'). Thus, in a
 'normal' application, any request to modify state (change email address, for instance), would not return any values - 
 a further call to the 'read' side would be employed to fetch the updated object.
